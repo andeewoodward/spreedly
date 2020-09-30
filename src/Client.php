@@ -78,6 +78,10 @@ class Client
                     throw new Exceptions\TimeoutException();
                 }
 
+                if (!in_array($response->getStatusCode(), [422])) {
+                  throw new \Exception('Spreedly Error HTTP ' . $response->getStatusCode());
+                }
+
                 $this->setResponse($response);
                 $this->status = 'error';
             } else {
