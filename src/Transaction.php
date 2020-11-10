@@ -87,7 +87,9 @@ class Transaction
                     ]);
 
                     return $this->client;
-                } elseif ($url = $urls) {
+                }
+                else {
+                    $url = $urls;
                     $transactions = $this->client->request($url)->response();
 
                     $this->client->setResponse($transactions);

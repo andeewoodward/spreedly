@@ -59,7 +59,7 @@ class Client
      *
      * @return Tuurbo\Spreedly\Client
      */
-    protected function request($url, $method, array $data = null)
+    public function request($url, $method, array $data = null)
     {
         try {
             $baseUrl = $this->config['baseUrl'];
