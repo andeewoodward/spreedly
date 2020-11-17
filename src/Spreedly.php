@@ -3,6 +3,7 @@
 namespace Tuurbo\Spreedly;
 
 use GuzzleHttp\Client as Guzzle;
+use GuzzleHttp\RequestOptions;
 
 class Spreedly
 {
@@ -120,6 +121,6 @@ class Spreedly
      */
     public function client()
     {
-        return new Client(new Guzzle(), $this->config);
+        return new Client(new Guzzle([RequestOptions::HTTP_ERRORS => false]), $this->config);
     }
 }
