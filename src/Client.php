@@ -132,7 +132,7 @@ class Client
      *
      * @param string $key
      *
-     * @return array
+     * @return mixed
      */
     public function response($key = null)
     {
